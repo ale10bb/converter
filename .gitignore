@@ -1,0 +1,7 @@
+__pycache__
+/.venv
+/build
+*.spec
+/dist
+/converter.log
+/vulns.sqlite3
