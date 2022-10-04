@@ -3,5 +3,6 @@ __pycache__
 /build
 *.spec
 /dist
+/nuitka
 /converter.log
 /vulns.sqlite3
