@@ -1,8 +1,10 @@
 walkdir
 requests
 beautifulsoup4[lxml]
-mysql-connector-python
+tqdm
 
 # 打包相关
-# nuitka[ordered-set,zstandard]
+nuitka
+ordered-set
+zstandard
 # nuitka --output-dir=nuitka --windows-icon-from-ico=res/icon.ico --onefile x.py
