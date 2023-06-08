@@ -63,7 +63,7 @@ if __name__ == '__main__':
     for item in target:
         converted_item = os.path.splitext(item)[0] + '_converted.csv'
         try:
-            logger.info('当前文件: "{}"', item)
+            logger.info('当前文件: "%s', item)
             # 微软默认使用UTF-8-BOM的格式读写CSV
             with open(item, encoding='utf-8-sig') as src_file, open(converted_item, 'w', encoding='utf-8-sig') as dst_file:
                 reader = csv.DictReader(
@@ -127,9 +127,9 @@ if __name__ == '__main__':
                     finally:
                         writer.writerow(row)
 
-            logger.info('处理完成: "{}"', converted_item)
+            logger.info('处理完成: "%s"', converted_item)
         except Exception as err:
-            logger.warning('处理失败: "{}"', err)
+            logger.warning('处理失败: "%s"', err)
 
     cnx.close()
     logger.info('处理结束')
