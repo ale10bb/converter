@@ -177,12 +177,14 @@ if __name__ == "__main__":
                 # 转换风险
                 if issueTypeNode.get("maxIssueSeverity") == "0":
                     risk = "信息"
-                if issueTypeNode.get("maxIssueSeverity") == "1":
+                elif issueTypeNode.get("maxIssueSeverity") == "1":
                     risk = "低危"
-                if issueTypeNode.get("maxIssueSeverity") == "2":
+                elif issueTypeNode.get("maxIssueSeverity") == "2":
                     risk = "中危"
-                if issueTypeNode.get("maxIssueSeverity") == "3":
+                elif issueTypeNode.get("maxIssueSeverity") == "3":
                     risk = "高危"
+                else:
+                    risk = "危急"
                 ET.SubElement(vulRoot, "RISK").text = risk
                 # bugfix: 10.0.5以上的版本存在bug，部分新加入漏洞库的问题没有汉化，
                 #         对应的security-risks和fix-recommendation可能为空，因此增加空值判断
