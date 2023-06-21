@@ -70,7 +70,7 @@ if __name__ == "__main__":
         try:
             logger.info('当前文件: "%s', item)
             # 微软默认使用UTF-8-BOM的格式读写CSV
-            with open(item, encoding="utf-8-sig") as src_file, open(
+            with open(item, encoding="utf-8-sig", errors="ignore") as src_file, open(
                 converted_item, "w", encoding="utf-8-sig"
             ) as dst_file:
                 reader = csv.DictReader(
